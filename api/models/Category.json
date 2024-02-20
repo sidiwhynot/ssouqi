@@ -1,0 +1,35 @@
+{
+    "label": "Informatique",
+    "image": "/images/Informatique.png",
+
+    "label": "Electroménager",
+    "image": "/images/Electroménager.jpg",
+
+    "label": "Téléphonie",
+    "image": "/images/Téléphonie.jpeg",
+
+    "label": "Jeux Vidéo",
+    "image": "/images/Jeux.jpg",
+
+    "label": "Meuble",
+    "image": "/images/Meuble.jpg",
+
+    "label": "Bricolage",
+    "image": "/images/Bricolage.jpg",
+
+    "label": "Mode",
+    "image": "/images/Mode.jpg",
+
+    "label": "Parfum",
+    "image": "/images/Parfum.jpeg",
+
+    "label": "Beauté",
+    "image": "/images/Beauté.jpg",
+
+    "label": "Voiture",
+    "image": "/images/Voiture.jpg",
+
+    "label": "Sport",
+    "image": "/images/Sport.jpg"
+
+  }
