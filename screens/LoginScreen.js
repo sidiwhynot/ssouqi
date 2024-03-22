@@ -37,7 +37,7 @@ import { useNavigation } from "@react-navigation/native";
     setLoading(true);
 
     axios
-    .post("http://192.168.1.50:8081/login", user)
+    .post("http://192.168.1.134:8081/login", user)
     .then((response) => {
       console.log(response);
       const token = response.data.token;

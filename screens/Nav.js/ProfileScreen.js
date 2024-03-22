@@ -47,7 +47,7 @@ const ProfileScreen = ({ navigation }) => {
     
                 // Ajoutez une condition pour effectuer la requête uniquement si l'utilisateur est connecté
                 if (authToken) {
-                    const response = await axios.get('http://192.168.1.50:8081/api/user', {
+                    const response = await axios.get('http://192.168.1.134:8081/api/user', {
                         headers: {
                             'Authorization': `Bearer ${authToken}`,
                             'Content-Type': 'application/json',

@@ -14,13 +14,13 @@ const ProductListScreen = ({ route, navigation }) => {
       // Mettre à jour refreshing à true pour indiquer le début du rafraîchissement
       setRefreshing(true);
   
-      const response = await axios.get(`http://192.168.1.50:8081/api/categories/${selectedCategory._id}/products`);
+      const response = await axios.get(`http://192.168.1.134:8081/api/categories/${selectedCategory._id}/products`);
     //  console.log('Produits récupérés depuis le backend :', response.data);
   
       // Charger les détails complets des produits
       const productsWithDetails = await Promise.all(
         response.data.products.map(async (productId) => {
-          const productDetails = await axios.get(`http://192.168.1.50:8081/api/products/${productId}`);
+          const productDetails = await axios.get(`http://192.168.1.134:8081/api/products/${productId}`);
           return productDetails.data;
         })
       );

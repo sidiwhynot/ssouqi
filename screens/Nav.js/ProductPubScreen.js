@@ -13,7 +13,7 @@ const ProductPubScreen = ({ navigation }) => {
         const userId = await AsyncStorage.getItem("userId");
 
         // Effectuer une requête vers le backend pour récupérer les produits de l'utilisateur
-        const response = await axios.get(`http://192.168.1.50:8081/api/user-products/${userId}`);
+        const response = await axios.get(`http://192.168.1.134:8081/api/user-products/${userId}`);
 
         // Mettre à jour l'état userProducts avec les données récupérées
         setUserProducts(response.data);
@@ -33,7 +33,7 @@ const ProductPubScreen = ({ navigation }) => {
   const handleDeleteProduct = async (productId) => {
     try {
       // Effectuer une requête vers le backend pour supprimer le produit
-      await axios.delete(`http://192.168.1.50:8081/api/products/${productId}`);
+      await axios.delete(`http://192.168.1.134:8081/api/products/${productId}`);
 
       // Mettre à jour l'état userProducts en excluant le produit supprimé
       setUserProducts((prevProducts) => prevProducts.filter((product) => product.productId !== productId));

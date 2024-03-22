@@ -12,7 +12,7 @@ const HomeScreen = ({ route ,navigation }) => {
 
   const updateProductList = async () => {
     try {
-      const response = await axios.get('http://192.168.1.50:8081/api/categories');
+      const response = await axios.get('http://192.168.1.134:8081/api/categories');
       console.log('Catégories mises à jour avec succès :', response.data);
       setCategories(response.data);
     } catch (error) {

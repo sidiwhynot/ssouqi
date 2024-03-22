@@ -87,7 +87,7 @@ const PostScreen = ({ route , navigation }) => {
   
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://192.168.1.50:8081/api/categories');
+        const response = await axios.get('http://192.168.1.134:8081/api/categories');
         console.log('Catégories récupérées depuis le backend :', response.data);
         setCategories(response.data); // Utiliser setCategories pour mettre à jour le state
       } catch (error) {
@@ -160,7 +160,7 @@ const PostScreen = ({ route , navigation }) => {
       console.log('Données du produit :', productData);
   
       // Effectuer une requête POST avec Axios
-      const response = await axios.post('http://192.168.1.50:8081/api/products', productData, {
+      const response = await axios.post('http://192.168.1.134:8081/api/products', productData, {
         timeout: 0,
         headers: {
           'Authorization': `Bearer ${userToken}`,
@@ -293,7 +293,7 @@ const PostScreen = ({ route , navigation }) => {
                   selectedCategory && selectedCategory._id === item._id && styles.categoryItemSelected,
                 ]}
               >
-                <Image source={{ uri: `http://192.168.1.50:8081${item.image}` }} style={styles.categoryImage} />
+                <Image source={{ uri: `http://192.168.1.134:8081${item.image}` }} style={styles.categoryImage} />
                 <Text style={styles.categoryText}>{item.label}</Text>
               </View>
             </TouchableOpacity>

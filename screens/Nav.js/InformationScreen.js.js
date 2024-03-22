@@ -17,7 +17,7 @@ const InformationScreen = () => {
         const fetchAuthenticatedUser = async () => {
             try {
                 const authToken = await AsyncStorage.getItem('authToken');
-                const response = await axios.get('http://192.168.1.50:8081/api/user', {
+                const response = await axios.get('http://192.168.1.134:8081/api/user', {
                     headers: {
                         'Authorization': `Bearer ${authToken}`,
                         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const InformationScreen = () => {
             const authToken = await AsyncStorage.getItem('authToken');
 
             const response = await axios.put(
-                'http://192.168.1.50:8081/api/user',
+                'http://192.168.1.134:8081/api/user',
                 {
                     newName,
                     newEmail,

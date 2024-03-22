@@ -48,7 +48,7 @@ const EditProductScreen = ({ route }) => {
     try {
       const authToken = await AsyncStorage.getItem('authToken');
       const response = await axios.put(
-        `http://192.168.1.50:8081/api/products/${productId}`,
+        `http://192.168.1.134:8081/api/products/${productId}`,
         {
           productName,
           productDescription,

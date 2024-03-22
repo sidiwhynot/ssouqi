@@ -48,7 +48,7 @@ const authenticateToken = (req, res, next) => {
 
 
 app.use(cors({
-  origin: 'http://192.168.1.50:8081', // Remplacez par l'origine de votre frontend
+  origin: 'http://192.168.1.134:8081', // Remplacez par l'origine de votre frontend
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Autorise les cookies et les informations d'authentification
 }));
@@ -93,7 +93,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
         from: 'sidiismailba@gmail.com',
         to: email,
         subject: 'Vérification de l\'adresse e-mail',
-        text: `Cliquez sur le lien suivant pour vérifier votre adresse e-mail: http://192.168.1.50:8081/verification?token=${verificationToken}`,
+        text: `Cliquez sur le lien suivant pour vérifier votre adresse e-mail: http://192.168.1.134:8081/verification?token=${verificationToken}`,
     };
 
     try {

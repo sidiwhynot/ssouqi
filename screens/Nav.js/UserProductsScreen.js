@@ -12,7 +12,7 @@ const UserProducts = () => {
     const fetchUserProducts = async () => {
       try {
         const authToken = await AsyncStorage.getItem('authToken');
-        const response = await axios.get('http://192.168.1.50:8081/api/user/products', {
+        const response = await axios.get('http://192.168.1.134:8081/api/user/products', {
           headers: {
             'Authorization': `Bearer ${authToken}`,
             'Content-Type': 'application/json',

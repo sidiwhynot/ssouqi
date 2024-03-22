@@ -23,63 +23,63 @@ import HomeTabScreen from '../screens/Nav.js/HomeTabScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-//function BottomTabs() {
-   // return (
-   //     <Tab.Navigator
-  //      screenOptions={({ route }) => ({
-   //         tabBarActiveTintColor: '#008e97',
-   //         tabBarInactiveTintColor: 'black',
-  //          tabBarLabelStyle: {
-   //             fontSize: 14,
-   //             fontWeight: 'bold',
+function BottomTabs() {
+    return (
+        <Tab.Navigator
+       screenOptions={({ route }) => ({
+            tabBarActiveTintColor: '#008e97',
+           tabBarInactiveTintColor: 'black',
+            tabBarLabelStyle: {
+                fontSize: 14,
+                fontWeight: 'bold',
                
-   //         },
-   //         tabBarStyle: {
-    //            backgroundColor: 'white',
-    //            borderTopColor: 'lightgray',
-    //            paddingBottom: 13,
-    //            ...Platform.select({
-    //                ios: {
-     //                   height: 60, // Ajustez la hauteur pour iOS si nécessaire
-     //               },
-     //               android: {
-      //                  height: 60, // Ajoutez des styles spécifiques à Android si nécessaire
-     //               },
-     //           }),
-     //       },
-      //      tabBarIcon: ({ focused, color, size }) => {
-      //          let iconName;
+            },
+            tabBarStyle: {
+                backgroundColor: 'white',
+                borderTopColor: 'lightgray',
+                paddingBottom: 13,
+                ...Platform.select({
+                    ios: {
+                        height: 60, // Ajustez la hauteur pour iOS si nécessaire
+                    },
+                    android: {
+                        height: 60, // Ajoutez des styles spécifiques à Android si nécessaire
+                    },
+                }),
+            },
+            tabBarIcon: ({ focused, color, size }) => {
+                let iconName;
 
-        //        if (route.name === 'Accueil') {
-        //            iconName = 'home';
-        //        } else if (route.name === 'Annonce') {
-       //             iconName = 'add-circle-outline';
-        //        } else if (route.name === 'Profil') {
-       //             iconName = 'person-outline';
-        //        }
+                if (route.name === 'Accueil') {
+                   iconName = 'home';
+               } else if (route.name === 'Annonce') {
+                    iconName = 'add-circle-outline';
+                } else if (route.name === 'Profil') {
+                    iconName = 'person-outline';
+                }
 
-       //         return <Ionicons name={iconName} size={size - 2} color={color} style={{ marginBottom: focused ? -3 : 0 }} />;
-      //      },
-     //   })}
-    //>
-       // <Tab.Screen
-       //     name="Accueil"
-       //     component={HomeScreen}
-       //     options={{ tabBarLabel: 'Accueil' }}
-      //  />
-      //  <Tab.Screen
-     //       name="Annonce"
-      //      component={PostScreen}
-     //       options={{ tabBarLabel: 'Annonce' }}
-    //    />
-    //    <Tab.Screen
-    //        name="Profil"
-    //        component={ProfileScreen}
-     //       options={{ tabBarLabel: 'Profil' }}
-     //   />
-   // </Tab.Navigator>
-   // );
-//}
+                return <Ionicons name={iconName} size={size - 2} color={color} style={{ marginBottom: focused ? -3 : 0 }} />;
+            },
+        })}
+    >
+        <Tab.Screen
+            name="Accueil"
+            component={HomeScreen}
+            options={{ tabBarLabel: 'Accueil' }}
+        />
+        <Tab.Screen
+            name="Annonce"
+            component={PostScreen}
+            options={{ tabBarLabel: 'Annonce' }}
+        />
+        <Tab.Screen
+            name="Profil"
+            component={ProfileScreen}
+            options={{ tabBarLabel: 'Profil' }}
+        />
+    </Tab.Navigator>
+    );
+}
 
 //const StackNavigator = () => {
  //   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -96,10 +96,10 @@ const Tab = createBottomTabNavigator();
 
   //      checkLoginStatus();
   //  }, []);
-
+  const StackNavigator = () => {
     return (
         <NavigationContainer>
- //<Stack.Navigator
+       <Stack.Navigator
   //initialRouteName={isUserLoggedIn ? "HomeTabScreen" : "Login"}
   //  screenOptions={{
    //     headerTitle: null, // Masque le titre de l'en-tête pour tous les écrans
@@ -112,9 +112,9 @@ const Tab = createBottomTabNavigator();
  //       },
   //  }}
 >
-                <Stack.Screen name="HomeTabScreen" component={HomeTabScreen} options={{headerTitle: null }} />
+             
 
-                <Stack.Screen name="home" component={HomeScreen} options={{ headerTitle: null, headerShown: false }} />
+                <Stack.Screen name="home" component={BottomTabs} options={{ headerTitle: null, headerShown: false }} />
 
                 <Stack.Screen name="login" component={LoginScreen} />
                 <Stack.Screen name="Information" component={InformationScreen} />
@@ -127,10 +127,10 @@ const Tab = createBottomTabNavigator();
               
 
 
-        //    </Stack.Navigator>
+            </Stack.Navigator>
         </NavigationContainer>
     );
-//};
+};
 
 export default StackNavigator;
 

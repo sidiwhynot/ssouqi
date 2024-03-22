@@ -43,7 +43,7 @@ import { useNavigation } from '@react-navigation/native';
     };
     
     axios
-      .post("http://192.168.1.50:8081/register", user, { timeout: 10000 })
+      .post("http://192.168.1.134:8081/register", user, { timeout: 10000 })
       .then((response) => {
         console.log(response);
         Alert.alert(

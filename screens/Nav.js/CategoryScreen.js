@@ -31,7 +31,7 @@ class CategoryScreen extends PureComponent {
 
   fetchCategories = () => {
     console.log('Fetching categories...');
-    axios.get('http://192.168.1.50:8081/api/categories')
+    axios.get('http://192.168.1.134:8081/api/categories')
       .then(response => {
         console.log('Categories received:', response.data);
         this.setState(prevState => ({
@@ -123,7 +123,7 @@ class CategoryScreen extends PureComponent {
                       selectedCategoryIndex === index && styles.categoryItemSelected,
                     ]}
                   >
-                    <Image source={{ uri: `http://192.168.1.50:8081${item.image}` }} style={styles.categoryImage} />
+                    <Image source={{ uri: `http://192.168.1.134:8081${item.image}` }} style={styles.categoryImage} />
                     <Text style={styles.categoryText}>{item.label}</Text>
                   </View>
                 </TouchableOpacity>
